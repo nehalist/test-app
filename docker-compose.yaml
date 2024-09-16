@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  database:
+    image: postgres:16.3
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "127.42.90.85:5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data/
+
+volumes:
+  db:
